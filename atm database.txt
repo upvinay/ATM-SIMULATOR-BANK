@@ -1,0 +1,37 @@
+create database bankmanagementsystem;
+use bankmanagementsystem;
+show tables;
+
+create table admin ( adminid varchar(10), name varchar(10), pass varchar(4), dob varchar(10));
+insert into admin values("admin","vinay","1234","20/08/2004");
+select * from admin;
+
+
+
+create table signup(formno int, name varchar(20),father_name varchar(20),dob VARCHAR(20),gender varchar(10),email varchar(20),marital varchar(10),address varchar(20),city varchar(20),pincode varchar(8),state varchar(15));
+select * from signup;
+
+
+create table signuptwo(formno int,religion varchar(15),category varchar(15),income varchar(20),education varchar(20),occupation varchar(15),pan varchar(10),aadhar varchar(12));
+select * from signuptwo;
+
+
+
+create table accountdetails( fromno int, acno long, ifsc varchar(10),name varchar(20));
+
+select * from accountdetails;
+
+
+
+SELECT a.formno, a.acno, a.ifsc, a.name, s.aadhar, s.pan FROM accountdetails a INNER JOIN signuptwo s ON a.formno = s.formno;
+
+
+
+
+
+create table login( acno Long, cardnumber long, pin int, start date, end date);
+select * from login;
+
+create table bank(acno long, pin int,date varchar(30),type varchar(10),amount varchar(10));
+select * from bank;
+
